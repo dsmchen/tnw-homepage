@@ -10,10 +10,12 @@ article {
   border: 2px solid green;
 }
 
-/* Mobile */
+/* Mobile
+   ========================================================================== */
 
 /* Header */
-header {
+
+body > header {
   position: fixed;
   width: 100%;
   background-color: #fff;
@@ -21,13 +23,13 @@ header {
 .header-container {
   display: flex;
 }
-h1 {
+.header-container h1 {
   width: 106px;
   height: 48px;
   margin: 0;
   background: linear-gradient(to bottom right,#c09,#f42 85%);
 }
-.tablet-nav {
+.nav-tablet {
   display: none;
 }
 .cta {
@@ -37,34 +39,46 @@ h1 {
 }
 
 /* Featured articles */
+
 .featured-articles {
   margin-top: 82px;
+}
+.featured-articles header {
+  display: none;
 }
 .featured-article {
   min-height: 30vh;
 }
 
 /* Latest news */
+
 .news {
   min-height: 72px;
 }
 
 /* Latest funding */
+
+.funding-container article:last-of-type {
+  display: none;
+}
 .funding {
   min-height: 60px;
 }
 
-/* Tablet */
+/* Tablet
+   ========================================================================== */
 
 @media screen and (min-width: 768px) {
+
   /* Header */
-  h1 {
+
+  .header-container h1 {
     height: 80px;
   }
-  .tablet-nav {
+  .nav-tablet {
     display: block;
   }
-  .mobile-nav {
+  .nav-mobile {
     display: none;
   }
   .cta {
@@ -72,6 +86,7 @@ h1 {
   }
 
   /* Featured articles */
+
   .featured-articles {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -88,6 +103,7 @@ h1 {
   }
 
   /* Latest news */
+
   .latest-news {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -97,6 +113,7 @@ h1 {
   }
 
   /* Latest funding */
+
   .funding-container {
     display: flex;
   }
@@ -104,18 +121,72 @@ h1 {
     flex: 1;
   }
 
-  /* More news */
-  .more-news-container {
+  /* Other news */
+
+  .other-news-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
 
   /* Latest deals */
+
   .latest-deals {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
   .latest-deals h2 {
     grid-column: 1 / -1;
+  }
+}
+
+/* Desktop
+   ========================================================================== */
+
+@media screen and (min-width: 1024px) {
+
+  /* Header */
+
+  .header-container h1 {
+    display: none;
+  }
+
+  /* Featured articles */
+
+  .featured-articles header {
+    display: block;
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+  }
+
+  /* Other articles */
+
+  .other-articles-container {
+    max-width: 1152px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Latest news */
+
+  .latest-news {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Latest funding */
+
+  .funding-container article:last-of-type {
+    display: block;
+  }
+
+  /* Other news */
+
+  .other-news-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Latest deals */
+
+  .latest-deals {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
