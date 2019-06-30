@@ -11,6 +11,7 @@
   --white: #fff;
   --darkgrey: #555;
   --lightgrey: #aaa;
+  --whitegrey: #eee;
   --orange: #f42;
   --purple: #c09;
   --yellow: #fd3;
@@ -36,9 +37,10 @@ body {
 a {
   text-decoration: none;
 }
-.cta a {
+a .cta {
   font-size: 10px;
   line-height: 30px;
+  text-align: center;
   color: var(--black);
 }
 h2 {
@@ -91,12 +93,34 @@ body > header {
 }
 .header-container {
   display: flex;
+  justify-content: space-between;
 }
 .header-container h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 106px;
   height: 48px;
   margin: 0;
   background: linear-gradient(to bottom right,var(--purple),var(--orange) 85%);
+}
+.header-container h1 a {
+  height: 100%;
+}
+nav button {
+  height: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  background-color: var(--white);
+  border: 0;
+  border-left: 1px solid var(--whitegrey);
+  cursor: pointer;
+}
+.search-btn {
+  color: var(--lightgrey);
+}
+.nav-mobile {
+  color: var(--orange);
 }
 .nav-tablet {
   display: none;
@@ -108,7 +132,7 @@ body > header {
 /* Featured articles */
 
 .featured-articles {
-  margin-top: 82px;
+  margin-top: 78px;
 }
 .featured-articles header {
   display: none;
